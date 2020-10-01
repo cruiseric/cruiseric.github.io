@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  background-color: #aaa;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+}
+
+header {
+  background-color: #343434;
+  padding: 20px;
+}
+
+img {
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+a {
+  color: white;
+}
+
+.navbar {
+  margin-top: -16px;
+}
+
+.navul {
+  padding: 10px;
+  background: rgb(58, 30, 50);
+}
+
+ul {
+  padding: 10px;
+  background: rgba(72, 72, 72, 0.5);
+}
+
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+.aboutmediv {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contactmediv {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 38px;
+}
