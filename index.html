@@ -1,9 +1,183 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      text-align: center;
+      background-color: #aaa;
+      font-family: 'Ubuntu', sans-serif;
+      ;
+      color: white;
+
+    }
+
+    header {
+      background-color: #343434;
+      padding: 20px;
+    }
+
+    img {
+      border: 5px solid white;
+      border-radius: 50%;
+    }
+
+    a {
+      color: white
+    }
+
+    .navbar {
+      margin-top: -16px;
+    }
+
+    .navul {
+      padding: 10px;
+      background: rgb(58, 30, 50);
+    }
+
+    ul {
+      padding: 10px;
+      background: rgba(72, 72, 72, 0.5);
+    }
+
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+
+    .aboutmediv {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contactmediv {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%
+    }
+
+    .sticky+.content {
+      padding-top: 38px;
+    }
+  </style>
+</head>
+
 <body>
-  <h1>Hello World</h1>
-  <p>I'm hosted with GitHub Pages.</p>
+  <header>
+    <img src="assets/ericpic.png" />
+    <h1>Who is Eric Chan?</h1>
+  </header>
+  <div class="navbar" id="myNav">
+    <ul class="navul">
+      <li><a href="#aboutme">About Me</a></li>
+      <li><a href="#contactme">Contact Me</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 onclick="aboutHider()" id="aboutme">About Me</h2>
+    <div class="aboutmediv" id="abouttoggle">
+      <p>
+        Hello. My name is Eric Chan, and I am an aspiring web developer /
+        software engineer. I got into programming because I wanted a career
+        change. I was previously in hospitality and food, and although I enjoyed
+        doing what I did, I wanted a career that was more more stable both
+        financially and in job security, mentally challenging and rewarding, and
+        with room for growth.
+      </p>
+      <p>
+        I enjoy learning new things and challenging myself to improve, no matter
+        how small the improvement may be. I like to learn how to do things the
+        "right way" but then be able to play around to learn why and how things
+        work they way they do, and see if I can come up with other ways to do things.
+      </p>
+      <p>
+        I have many hobbies! Some include:
+      <ul>
+        <li>Video games</li>
+        <li>Cooking</li>
+        <li>Traveling</li>
+        <li>Bouldering</li>
+        <li>Beer</li>
+        <li>Puzzles and escape rooms</li>
+        <li>And of course, programming!</li>
+      </ul>
+      </p>
+      <p>
+        I am an aspiring web developer, but there are many things I want to get better at. I want to learn how to play
+        guitar. I want to get better at bouldering. I want to sky dive and scuba dive. I like trying new things!
+      </p>
+    </div>
+    <h2 onclick="contactHider()" id="contactme">Contact Me</h2>
+    <div class="contactmediv" id="contacttoggle">
+      <p>
+        Let's connect! You can reach me through the following :
+      <ul>
+        <li>E-mail: e.chan1389@gmail.com</li>
+        <li><a href="https://www.linkedin.com/in/eric-chan-eric" title="Eric's LinkedIn" target="_blank">LinkedIn</a>
+        </li>
+      </ul>
+      Or leave a message!
+      <form>
+        Name:<br>
+        <input type="text" name="name"><br>
+        Email:<br>
+        <input type="text" name="email"><br>
+        Message:<br>
+        <textarea name="message" rows="10" cols="30"></textarea><br>
+        <button onclick="submitAlert()">Submit</button>
+      </form>
+      </p>
+    </div>
+  </div>
+  <script>
+    window.onscroll = function () { stickyNav() };
+
+    var mynavbar = document.getElementById("myNav");
+    var sticky = mynavbar.offsetTop;
+
+    function stickyNav() {
+      //console.log("window", window.pageYOffset)
+      //console.log("nav", sticky)
+      //sticky navbar is jumping earlier than it should be, can't figure out why
+      if (window.pageYOffset > sticky) {
+        mynavbar.classList.add("sticky");
+      } else {
+        mynavbar.classList.remove("sticky");
+      }
+    }
+  </script>
+  <script>
+    function submitAlert() {
+      alert("Submitted!");
+    }
+  </script>
+  <script>
+    function aboutHider() {
+      var x = document.getElementById("abouttoggle");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+  <script>
+    function contactHider() {
+      var x = document.getElementById("contacttoggle");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
 </body>
 
 </html>
